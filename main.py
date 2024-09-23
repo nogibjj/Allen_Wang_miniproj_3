@@ -44,14 +44,25 @@ def generate_report(df, title):
     summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(df)
 
     with open(title + ".md", "w", encoding="utf-8") as file:
-        file.write("Summary:\n")
+        file.write("# Summary Report\n\n")
+        
+        file.write("## Summary Statistics:\n")
         file.write(str(summary_stats) + "\n\n")
-        file.write("Mean:\n")
-        file.write(str(mean_values) + "\n\n")
-        file.write("Median:\n")
-        file.write(str(median_values) + "\n\n")
-        file.write("Standard Deviation:\n")
-        file.write(str(std_dev) + "\n\n")
+        
+        file.write("## Mean Values:\n")
+        for column, mean in mean_values.items():
+            file.write(f"- **{column}**: {mean}\n")
+        file.write("\n")
+        
+        file.write("## Median Values:\n")
+        for column, median in median_values.items():
+            file.write(f"- **{column}**: {median}\n")
+        file.write("\n")
+        
+        file.write("## Standard Deviation:\n")
+        for column, std in std_dev.items():
+            file.write(f"- **{column}**: {std}\n")
+        file.write("\n")
         file.write("![image1](Age_distribution.png)\n")
         file.write("\n\n")
         file.write("![image2](Fare_distribution.png)\n")

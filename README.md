@@ -1,4 +1,4 @@
-# Allen_Wang_miniproj_2
+# Allen_Wang_miniproj_3
 
 [![CI](https://github.com/nogibjj/Allen_Wang_miniproj_2/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/Allen_Wang_miniproj_2/actions/workflows/CICD.yml)
 
@@ -36,8 +36,8 @@ This project includes a Python development environment configured with a `.devco
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/nogibjj/Allen_Wang_miniproj_1.git
-    cd Allen_Wang_miniproj_1
+    git clone https://github.com/nogibjj/Allen_Wang_miniproj_3.git
+    cd Allen_Wang_miniproj_3
     ```
 
 2. **Install dependencies:**
