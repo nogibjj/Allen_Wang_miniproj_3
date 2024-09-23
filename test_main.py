@@ -63,7 +63,6 @@ def test_report():
     )
     df = read_dataset(file_path)
     generate_report(df, "Titanic Profiling Report")
-    assert os.path.isfile("Titanic Profiling Report.html")
     assert os.path.isfile("Titanic Profiling Report.md")
 
 

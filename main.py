@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import polars.selectors as cs
 
+
 def read_dataset(file_path):
     df = None
     if file_path.endswith(".csv"):
@@ -20,9 +21,7 @@ def generate_summary_statistics(df):
     mean_values = df.select(pl.all().mean())
     median_values = df.select(pl.all().median())
     std_dev = df.select(pl.all().std())
-    return summary,mean_values, median_values, std_dev
-
-
+    return summary, mean_values, median_values, std_dev
 
 
 def create_save_visualization(df, column_name, save_filename=None, show=False):
@@ -43,7 +42,7 @@ def create_save_visualization(df, column_name, save_filename=None, show=False):
 def generate_report(df, title):
     # Generate summary statistics using polars
     summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(df)
-    
+
     with open(title + ".md", "w", encoding="utf-8") as file:
         file.write("Summary:\n")
         file.write(str(summary_stats) + "\n\n")
