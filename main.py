@@ -50,21 +50,24 @@ def generate_report(df, title):
         file.write(str(summary_stats) + "\n\n")
         
         file.write("## Mean Values:\n")
-        for column, mean in mean_values.items():
+        for column in mean_values.columns:
+            mean = mean_values[column][0]  # Get the first (and only) value from the Series
             file.write(f"- **{column}**: {mean}\n")
         file.write("\n")
         
         file.write("## Median Values:\n")
-        for column, median in median_values.items():
+        for column in median_values.columns:
+            median = median_values[column][0]  # Get the first (and only) value from the Series
             file.write(f"- **{column}**: {median}\n")
         file.write("\n")
         
         file.write("## Standard Deviation:\n")
-        for column, std in std_dev.items():
+        for column in std_dev.columns:
+            std = std_dev[column][0]  # Get the first (and only) value from the Series
             file.write(f"- **{column}**: {std}\n")
         file.write("\n")
-        file.write("![image1](Age_distribution.png)\n")
-        file.write("\n\n")
-        file.write("![image2](Fare_distribution.png)\n")
-        file.write("\n\n")
-        file.write("![image3](Pclass_distribution.png)\n")
+        
+        file.write("## Distributions:\n")
+        file.write("![Age Distribution](Age_distribution.png)\n\n")
+        file.write("![Fare Distribution](Fare_distribution.png)\n\n")
+        file.write("![Pclass Distribution](Pclass_distribution.png)\n")
