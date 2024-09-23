@@ -1,7 +1,7 @@
 import polars as pl
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import polars.selectors as cs
 
 def read_dataset(file_path):
     df = None
@@ -14,13 +14,15 @@ def read_dataset(file_path):
 
 def generate_summary_statistics(df):
     # Using polars to generate summary statistics
-    numeric_df = df.select(pl.col(pl.Float64) | pl.col(pl.Int64))
-    
-    summary_stats = numeric_df.describe()
-    mean_values = numeric_df.mean()
-    median_values = numeric_df.median()
-    std_dev = numeric_df.std()
-    return summary_stats, mean_values, median_values, std_dev
+    summary = df.select(pl.all()).describe()
+    df = df.select(cs.by_dtype(pl.NUMERIC_DTYPES))
+    mean_values = df.select(pl.all().mean())
+    mean_values = df.select(pl.all().mean())
+    median_values = df.select(pl.all().median())
+    std_dev = df.select(pl.all().std())
+    return summary,mean_values, median_values, std_dev
+
+
 
 
 def create_save_visualization(df, column_name, save_filename=None, show=False):
@@ -56,4 +58,3 @@ def generate_report(df, title):
         file.write("![image2](Fare_distribution.png)\n")
         file.write("\n\n")
         file.write("![image3](Pclass_distribution.png)\n")
-
