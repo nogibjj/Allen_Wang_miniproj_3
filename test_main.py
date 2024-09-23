@@ -5,7 +5,7 @@ from main import (
     create_save_visualization,
 )
 import os
-import polars as pl
+import polar as pl
 
 
 def test_read():
