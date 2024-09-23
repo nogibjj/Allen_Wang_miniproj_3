@@ -42,11 +42,11 @@ def create_save_visualization(df, column_name, save_filename=None, show=False):
 def generate_report(df, title):
     # Generate summary statistics using polars
     summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(df)
-
+    
     with open(title + ".md", "w", encoding="utf-8") as file:
         file.write("# Summary Report\n\n")
+        file.write("| Metric          | Value           |\n")
         for i in range(len(summary_stats.columns)):
-            file.write("| Metric          | Value           |\n")
             file.write("|------------------|----------------|\n")
             for column in summary_stats.columns:
                 value = summary_stats[column][
