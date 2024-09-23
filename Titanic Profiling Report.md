@@ -11,7 +11,6 @@
 | **Siblings/Spouses Aboard**      | 887.0        |
 | **Parents/Children Aboard**      | 887.0        |
 | **Fare**      | 887.0        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | null_count        |
 | **Survived**      | 0.0        |
@@ -22,7 +21,6 @@
 | **Siblings/Spouses Aboard**      | 0.0        |
 | **Parents/Children Aboard**      | 0.0        |
 | **Fare**      | 0.0        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | mean        |
 | **Survived**      | 0.3855693348365276        |
@@ -33,7 +31,6 @@
 | **Siblings/Spouses Aboard**      | 0.5253664036076663        |
 | **Parents/Children Aboard**      | 0.3833145434047351        |
 | **Fare**      | 32.30542018038331        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | std        |
 | **Survived**      | 0.4870041177510123        |
@@ -44,7 +41,6 @@
 | **Siblings/Spouses Aboard**      | 1.10466855386757        |
 | **Parents/Children Aboard**      | 0.8074659070316833        |
 | **Fare**      | 49.782040400173905        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | min        |
 | **Survived**      | 0.0        |
@@ -55,7 +51,6 @@
 | **Siblings/Spouses Aboard**      | 0.0        |
 | **Parents/Children Aboard**      | 0.0        |
 | **Fare**      | 0.0        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | 25%        |
 | **Survived**      | 0.0        |
@@ -66,7 +61,6 @@
 | **Siblings/Spouses Aboard**      | 0.0        |
 | **Parents/Children Aboard**      | 0.0        |
 | **Fare**      | 7.925        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | 50%        |
 | **Survived**      | 0.0        |
@@ -77,7 +71,6 @@
 | **Siblings/Spouses Aboard**      | 0.0        |
 | **Parents/Children Aboard**      | 0.0        |
 | **Fare**      | 14.4542        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | 75%        |
 | **Survived**      | 1.0        |
@@ -88,7 +81,6 @@
 | **Siblings/Spouses Aboard**      | 1.0        |
 | **Parents/Children Aboard**      | 0.0        |
 | **Fare**      | 31.275        |
-| Metric          | Value           |
 |------------------|----------------|
 | **statistic**      | max        |
 | **Survived**      | 1.0        |
