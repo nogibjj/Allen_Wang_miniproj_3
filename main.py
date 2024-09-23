@@ -45,14 +45,14 @@ def generate_report(df, title):
 
     with open(title + ".md", "w", encoding="utf-8") as file:
         file.write("# Summary Report\n\n")
-
-        file.write("| Metric          | Value           |\n")
-        file.write("|------------------|----------------|\n")
-        for column in summary_stats.columns:
-            value = summary_stats[column][
-                0
-            ]  # Get the first (and only) value from the Series
-            file.write(f"| **{column}**      | {value}        |\n")
+        for i in range(len(summary_stats.columns)):
+            file.write("| Metric          | Value           |\n")
+            file.write("|------------------|----------------|\n")
+            for column in summary_stats.columns:
+                value = summary_stats[column][
+                    i
+                ]  # Get the first (and only) value from the Series
+                file.write(f"| **{column}**      | {value}        |\n")
         file.write("\n")
 
         file.write("## Mean Values:\n")
