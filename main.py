@@ -45,28 +45,32 @@ def generate_report(df, title):
 
     with open(title + ".md", "w", encoding="utf-8") as file:
         file.write("# Summary Report\n\n")
-        
+
         file.write("## Summary Statistics:\n")
         file.write(str(summary_stats) + "\n\n")
-        
+
         file.write("## Mean Values:\n")
         for column in mean_values.columns:
-            mean = mean_values[column][0]  # Get the first (and only) value from the Series
+            mean = mean_values[column][
+                0
+            ]  # Get the first (and only) value from the Series
             file.write(f"- **{column}**: {mean}\n")
         file.write("\n")
-        
+
         file.write("## Median Values:\n")
         for column in median_values.columns:
-            median = median_values[column][0]  # Get the first (and only) value from the Series
+            median = median_values[column][
+                0
+            ]  # Get the first (and only) value from the Series
             file.write(f"- **{column}**: {median}\n")
         file.write("\n")
-        
+
         file.write("## Standard Deviation:\n")
         for column in std_dev.columns:
             std = std_dev[column][0]  # Get the first (and only) value from the Series
             file.write(f"- **{column}**: {std}\n")
         file.write("\n")
-        
+
         file.write("## Distributions:\n")
         file.write("![Age Distribution](Age_distribution.png)\n\n")
         file.write("![Fare Distribution](Fare_distribution.png)\n\n")
