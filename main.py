@@ -49,10 +49,11 @@ def generate_report(df, title):
         file.write("| Metric          | Value           |\n")
         file.write("|------------------|----------------|\n")
         for column in summary_stats.columns:
-            value = summary_stats[column][0]  # Get the first (and only) value from the Series
+            value = summary_stats[column][
+                0
+            ]  # Get the first (and only) value from the Series
             file.write(f"| **{column}**      | {value}        |\n")
         file.write("\n")
-        
 
         file.write("## Mean Values:\n")
         for column in mean_values.columns:
