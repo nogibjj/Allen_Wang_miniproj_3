@@ -75,9 +75,11 @@ The Python script in `main.py` can perform the following:
 ### 2. **Generate Summary Statistics**:
    For each numeric column, the script generates:
    - Mean
+    ![Alt text](mean.png)
    - Median
+    ![Alt text](median.png)
    - Standard Deviation
-    ![Alt text](summary.png)
+    ![Alt text](std.png)
 
 ### 3. **Data Visualization**:
    The script creates a histogram for the numeric columns in the dataset.

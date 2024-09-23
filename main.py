@@ -18,8 +18,8 @@ def generate_summary_statistics(df):
     summary = df.select(pl.all()).describe()
     df = df.select(cs.by_dtype(pl.NUMERIC_DTYPES))
     mean_values = df.select(pl.all().mean())
-    mean_values = df.select(pl.all().mean())
     median_values = df.select(pl.all().median())
+    print(median_values)
     std_dev = df.select(pl.all().std())
     return summary, mean_values, median_values, std_dev
 
@@ -46,8 +46,13 @@ def generate_report(df, title):
     with open(title + ".md", "w", encoding="utf-8") as file:
         file.write("# Summary Report\n\n")
 
-        file.write("## Summary Statistics:\n")
-        file.write(str(summary_stats) + "\n\n")
+        file.write("| Metric          | Value           |\n")
+        file.write("|------------------|----------------|\n")
+        for column in summary_stats.columns:
+            value = summary_stats[column][0]  # Get the first (and only) value from the Series
+            file.write(f"| **{column}**      | {value}        |\n")
+        file.write("\n")
+        
 
         file.write("## Mean Values:\n")
         for column in mean_values.columns:
@@ -75,3 +80,7 @@ def generate_report(df, title):
         file.write("![Age Distribution](Age_distribution.png)\n\n")
         file.write("![Fare Distribution](Fare_distribution.png)\n\n")
         file.write("![Pclass Distribution](Pclass_distribution.png)\n")
+df = read_dataset(
+    "https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv"
+)
+generate_summary_statistics(df)
