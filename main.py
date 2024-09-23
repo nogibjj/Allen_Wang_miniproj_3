@@ -14,10 +14,12 @@ def read_dataset(file_path):
 
 def generate_summary_statistics(df):
     # Using polars to generate summary statistics
-    summary_stats = df.describe()
-    mean_values = df.select(pl.all().mean())
-    median_values = df.select(pl.all().median())
-    std_dev = df.select(pl.all().std())
+    numeric_df = df.select(pl.col(pl.Float64) | pl.col(pl.Int64))
+    
+    summary_stats = numeric_df.describe()
+    mean_values = numeric_df.mean()
+    median_values = numeric_df.median()
+    std_dev = numeric_df.std()
     return summary_stats, mean_values, median_values, std_dev
 
 
