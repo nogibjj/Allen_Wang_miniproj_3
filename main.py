@@ -80,7 +80,3 @@ def generate_report(df, title):
         file.write("![Age Distribution](Age_distribution.png)\n\n")
         file.write("![Fare Distribution](Fare_distribution.png)\n\n")
         file.write("![Pclass Distribution](Pclass_distribution.png)\n")
-df = read_dataset(
-    "https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv"
-)
-generate_summary_statistics(df)
